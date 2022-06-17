@@ -1,94 +1,54 @@
-import { useState } from "react";
+import { Component } from 'react'
 
-// function FormsReact() {
-//   const [checked, setChecked] = useState(false);
+class UserInfo extends Component {
+  constructor() {
+    super()
+    this.state = {}
+  }
 
-//   const items = ["Раз", "Два", "Три", "Четыре"];
+  render() {
+    return (
+      <main>
+        <form>
+          <input placeholder="First Name" />
+          <br />
+          <input placeholder="Last Name" />
+          <br />
+          <input placeholder="Age" />
+          <br />
 
-//   return (
-//     <div>
-//       <ul>
-//         {items.map((item) => (
-//           <li key={item}>
-//             <label>
-//               <input
-//                 type="radio"
-//                 checked={checked === item}
-//                 onChange={() => setChecked(item)}
-//               ></input>
-//               {item}
-//             </label>
-//           </li>
-//         ))}
-//       </ul>
-//     </div>
-//   );
-// }
+          {/* Здесь создайте переключатели для выбора пола */}
+          <br />
 
-export default FormsReact;
+          {/* Здесь создайте поле со списком для выбора места жительства */}
+          <br />
 
-// <div>
-// <input
-//   value={value}
-//   type="text"
-//   onChange={(e) => setValue(e.target.value)}
-// ></input>
-// </div>
+          {/* Здесь создайте выпадшку с кодами стран и инпут 
+																												для номера телефона */}
+          <br />
 
-// <input
-// value={checked}
-// type="checkbox"
-// onChange={(e) => setChecked(e.target.checked)}
-// ></input>
+           {/* Здесь создайте флажки для указания вероисповедания */}
+           <br />
 
-function FormsReact() {
-  const [value, setValue] = useState();
-
-  const handlerChange = (e) => {
-    setValue(e.target.value);
-    console.log(e.target.value);
-  };
-
-  return (
-    <div>
-      {value}
-      <select value={value} onChange={handlerChange}>
-        <option value="Война">Толстой</option>
-        <option value="Два">Два</option>
-        <option value="Три">Три</option>
-        <option value="Четыре">Четыре</option>
-      </select>
-    </div>
-  );
+          <button type="submit">Submit</button>
+        </form>
+        <hr />
+        <h2>
+          <font color="#3AC1EF">Entered information:</font>
+        </h2>
+        <p>Your name: {/* Имя и фамилия */}</p>
+        <p>Your age: {/* Возраст */}</p>
+        <p>Your gender: {/* Пол */}</p>
+        <p>Your destination: {/*  Место жительства */}</p>
+        <p>Your phone number: {/*  Место жительства */}</p>
+        <p>
+          Your religion:
+          {/* Список вероисповеданий: христианство, индуизм,
+																								 буддизм, ислам, иудаимз */}
+        </p>
+      </main>
+    )
+  }
 }
 
-
-// в классовой компоненте
-// class App extends React.Component {
-// 	constructor(props) {
-// 		super(props);
-
-// 		this.state = {
-// 			value: "Текст",
-// 		};
-// 	}
-
-// 	handlerChange(event) {
-// 		this.setState({
-// 			value: event.target.value,
-// 		});
-// 	}
-
-// 	render() {
-// 		return (
-// 			<div>
-// 				{this.state.value}
-// 				<br />
-// 				<input
-// 					value={this.state.value}
-// 					onChange={(e) => this.handlerChange(e)}
-// 				/>
-// 			</div>
-// 		);
-// 	}
-// }
+export default UserInfo
